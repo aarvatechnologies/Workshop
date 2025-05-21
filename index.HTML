@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ARRVA TECHNOLOGIES</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  overflow-x: hidden;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+section {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+}
+
+section.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Section 1 */
+.section1 {
+  flex-direction: column;
+  text-align: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.logo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #161b22;
+  padding: 10px;
+  box-shadow: 0 0 20px #58a6ff55;
+}
+
+.section1 h1 {
+  font-size: 4rem;
+}
+
+/* Section 2 */
+.section2 {
+  text-align: center;
+  padding: 2rem;
+}
+
+.section2 p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Section 3 */
+.section3 {
+  padding: 2rem 1rem;
+  width: 100%;
+}
+
+.card-carousel {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.cards {
+  display: flex;
+  gap: 1rem;
+  animation: scroll 30s linear infinite;
+  /* ensure no wrap */
+  flex-wrap: nowrap;
+}
+.third-section {
+  padding: 3rem 1rem;
+  background-color: #0d1117;
+  color: #fff;
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #58a6ff;
+}
+
+.card-carousel {
+  overflow: hidden;
+  max-width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+
+.cards {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: scroll 20s linear infinite; /* slower scroll */
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.card {
+  background: #161b22;
+  border-radius: 1rem;
+  padding: 1rem;
+  min-width: 250px;
+  max-width: 250px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.card-img {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #c9d1d9;
+}
+
+@media (max-width: 768px) {
+  .card {
+    min-width: 200px;
+    max-width: 200px;
+  }
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.card {
+  background: #161b22;
+  border-radius: 1rem;
+  padding: 1rem;
+  min-width: 250px;
+  max-width: 250px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background-color: #21262d;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Section 4 (Form Section) */
+.section4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #161b22;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: auto;
+  max-width: 800px;
+  width: 80%;
+  flex-direction: row;
+  gap: 2rem;
+}
+select {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%2358a6ff" height="10" viewBox="0 0 24 24" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 10px;
+}
+
+select option {
+  background-color: #161b22;
+  color: #c9d1d9;
+}
+
+
+.form-left {
+  flex: 1;
+}
+
+.form-right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-right input,
+.form-right textarea,
+.form-right select {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: #c9d1d9;
+  width: 100%;
+}
+
+.form-right input:focus,
+.form-right textarea,
+.form-right select:focus {
+  outline: none;
+  border-color: #58a6ff;
+}
+
+textarea{
+  resize: none;
+}
+
+.form-right textarea ::placeholder,
+.form-right input::placeholder {
+  color: #8b949e;
+}
+
+.submit-btn {
+  padding: 1rem;
+  background: #238636;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #2ea043;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #0d1117;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 2rem;
+  z-index: 1000;
+  border-bottom: 1px solid #30363d;
+}
+
+.navbar .logo img {
+  width: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: #c9d1d9;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #58a6ff;
+}
+
+/* -------------------- */
+/* ✅ MOBILE FIXES BELOW */
+/* -------------------- */
+@media (max-width: 768px) {
+  section {
+    padding: 1.5rem 1rem;
+    min-height: auto;
+    scroll-snap-align: none;
+  }
+
+  .section1 h1 {
+    font-size: 2.2rem;
+  }
+
+  .logo img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .section3 {
+    padding: 1rem;
+    min-height: auto;
+    height: auto;
+  }
+
+  .cards {
+    animation: scroll 20s linear infinite;
+  }
+
+  .card {
+    min-width: 80vw;
+  }
+
+  .section4 {
+    flex-direction: column;
+    padding: 1rem;
+    width: 80%;
+    margin: 1rem auto;
+  }
+
+  .form-left, .form-right {
+    width: 100%;
+  }
+
+  .nav-links {
+    display: none; /* Consider adding a hamburger menu */
+  }
+}
+
+  </style>
+</head>
+
+<body> 
+
+  <!-- Section 1 -->
+  <section class="section1"  id="section1">
+    <div class="logo">
+      <img src="AARVA.png" alt="ARRVA TECH logo" />
+    </div>
+    <h1>AARVA TECHNOLOGIES</h1>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="section2" id="section2">
+    <p>
+      AARVA TECH is a professional training and technology solution company providing world-class services and opportunities to students and industries. We believe in empowering talent with innovation and technical expertise.
+    </p>
+  </section>
+
+  <!-- Section 3 -->
+  <section class="section3"  id="section3">
+    <div class="card-carousel">
+      <div class="cards">
+        <!-- One full set -->
+        <div class="card"> <h3>Web Dev</h3><p>Modern websites built with care.</p></div>
+        <div class="card"> <h3>App Design</h3><p>Creative mobile UI/UX.</p></div>
+        <div class="card"> <h3>AI & ML</h3><p>Smart tech solutions.</p></div>
+        <div class="card"> <h3>Cloud</h3><p>Scalable integrations.</p></div>
+        <!-- Duplicate set for infinite loop -->
+        <div class="card"> <h3>Web Dev</h3><p>Modern websites built with care.</p></div>
+        <div class="card"> <h3>App Design</h3><p>Creative mobile UI/UX.</p></div>
+        <div class="card"> <h3>AI & ML</h3><p>Smart tech solutions.</p></div>
+        <div class="card"> <h3>Cloud</h3><p>Scalable integrations.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section class="section4"  id="section4">
+    
+    <div class="form-left">
+      <h2>AARVA TECH</h2>
+      <p>Register today to kickstart your career in tech with our expert-led programs.</p>
+    </div>
+    <form class="form-right" id="registrationForm" onsubmit="return validateForm()">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your email" required />
+           <select id="course" required>
+        <option value="">Select Course</option>
+        <option value="BCA">BCA</option>
+        <option value="BSC CYPER">BSC Cyber</option>
+        <option value="BSC IT">BSC IT</option>
+      </select>
+      <select id="college" required>
+        <option value="">Select College</option>
+        <option value="SVASC">Shree Venkateshwara(co-ed)Arts and Science College</option>
+      </select>
+      <!-- <input type="number" id="mobile" placeholder="Mobile No (10 digits)" maxlength="10" required /> -->
+      <textarea type="text" id="FeedBack"  placeholder="Enter Your FeedBack" rows="4" required ></textarea>
+ 
+      <button class="submit-btn" type="submit">Register</button>
+    </form>
+  </section>
+  <p id="message"></p>
+  <script type="module">
+    function validateForm() {
+      const name = document.getElementById('name').value.trim();
+
+      const nameRegex = /^[a-zA-Z\s]+$/;
+
+      if (!nameRegex.test(name)) {
+        alert("Please enter a valid name (letters only)");
+        return false;
+      }
+
+      return true;
+    }
+
+    // Section visibility animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('section');
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            } else {
+              entry.target.classList.remove('visible');
+            }
+          });
+        },
+        {
+          threshold: 0.5,
+        }
+      );
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+
+    // ✅ Correct Firebase config for aarva-workshop project
+    const firebaseConfig = {
+      apiKey: "AIzaSyChknt1_d9aVRzUIfS3BRPBupt7FAoQ1iY",
+      authDomain: "aarva-workshop.firebaseapp.com",
+      databaseURL: "https://aarva-workshop-default-rtdb.firebaseio.com/",
+      projectId: "aarva-workshop",
+      storageBucket: "aarva-workshop.appspot.com",
+      messagingSenderId: "353600450470",
+      appId: "1:353600450470:web:36ba7b336bdfc31f112967",
+      measurementId: "G-G3BKVD8BRJ"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+    document.getElementById("registrationForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const course = document.getElementById("course").value;
+      const college = document.getElementById("college").value;
+      const feedback = document.getElementById("FeedBack").value.trim();
+      const timestamp = new Date().toLocaleString();
+
+      // Basic name validation
+      const nameRegex = /^[a-zA-Z\s]+$/;
+      if (!nameRegex.test(name)) {
+        alert("Please enter a valid name (letters only).");
+        return;
+      }
+
+      const formData = {
+        name,
+        email,
+        course,
+        college,
+        feedback,
+        timestamp
+      };
+
+      try {
+        await push(ref(database, 'registrations'), formData);
+        document.getElementById("message").textContent = "✅ Registration successful!";
+        document.getElementById("message").style.color = "green";
+        document.getElementById("registrationForm").reset();
+      } catch (error) {
+        document.getElementById("message").textContent = "❌ Error: " + error.message;
+        document.getElementById("message").style.color = "red";
+      }
+    });
+
+
+</script>
+
+</body>
+</html>
